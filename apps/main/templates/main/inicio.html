@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stand Electrónico - GPS VL103</title>
+  <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+
+<header>
+  <a href="#" class="navbar-logo">
+    <video src="{% static 'main/logoanimado.mp4' %}" autoplay loop muted playsinline class="logo-animado-video" aria-label="Logo animado de Stand Electrónico"></video>
+    <span class="brand-name">Stand Electrónico</span>
+  </a>
+  <nav>
+    <a href="#productos">Productos</a>
+    <a href="#video">Video</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero" style="position: relative; min-height: 520px; display: flex; align-items: center; justify-content: center; background: #0a0f2e;">
+  <!-- Overlay para oscurecer la imagen y resaltar el texto -->
+  <div style="position: absolute; inset: 0; background: rgba(10, 15, 46, 0.65); z-index: 1;"></div>
+  <!-- Imagen de fondo -->
+  <img src="{% static 'main/hero2.png' %}" alt="GPS VL103 para flotas y vehículos" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+  <!-- Contenido hero -->
+  <div style="position: relative; z-index: 2; max-width: 700px; margin: auto; text-align: center; color: #fff;">
+    <h1 style="font-size: 2.3rem; font-weight: 800; text-shadow: 0 0 18px #00d8ff, 0 0 2px #fff;">GPS VL103 Anti-Jammer 4G – Tecnología para cualquier vehículo</h1>
+    <p style="font-size: 1.2rem; margin: 1.5rem 0 2.2rem 0; color: #a0cfff; text-shadow: 0 0 8px #0a0f2e;">Monitorea y protege <strong>motos, camiones, buses y más</strong> con la mejor tecnología GPS. Un solo dispositivo, toda tu flota segura.</p>
+    <button class="btn-primary" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Contáctanos</button>
+  </div>
+</section>
+
+
+
+<!-- SECCIÓN PRODUCTOS -->
+<section id="productos" class="productos-section">
+  <h2 class="productos-titulo">Productos Destacados</h2>
+  <div class="products">
+    <div class="card">
+      <img src="{% static 'main/gpscard.png' %}" alt="GPS VL103 Anti-Jammer 4G" class="card-img-top" />
+      <h3>GPS VL103 Anti-Jammer 4G</h3>
+      <ul>
+        <li>Anti-bloqueo de señal</li>
+        <li>Monitoreo en tiempo real</li>
+        <li>Instalación profesional</li>
+        <li>SIM Multi-Red 4G LTE</li>
+      </ul>
+      <div class="price">$275.000 COP</div>
+      <button class="btn-info" onclick="openModal('modal1')">Ver más</button>
+    </div>
+
+    <div class="card">
+      <img src="{% static 'main/multired.png' %}" alt="SIM CARD MULTI-RED" class="card-img-top" />
+      <h3>SIM CARD MULTI-RED</h3>
+      <ul>
+        <li>Conexión a varias redes móviles</li>
+        <li>Monitoreo en tiempo real</li>
+        <li>Cambio automático a la mejor señal</li>
+        <li>SIM Multi-Red 4G LTE</li>
+      </ul>
+      <div class="price">$80.000 COP</div>
+      <button class="btn-info" onclick="openModal('modal2')">Ver más</button>
+    </div>
+  </div>
+</section>
+
+<!-- MODALES DE PRODUCTO -->
+<div class="modal" id="modal1" onclick="closeModal(event, 'modal1')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(event, 'modal1')">&times;</button>
+    <h2>GPS VL103 Anti-Jammer 4G</h2>
+    <p>El GPS más avanzado para vehículos, con protección anti-jammer, cobertura nacional y plataforma web/app.</p>
+    <ul>
+      <li>Instalación profesional incluida</li>
+      <li>Alerta de desconexión y sabotaje</li>
+      <li>Soporte técnico personalizado</li>
+    </ul>
+  </div>
+</div>
+
+<div class="modal" id="modal2" onclick="closeModal(event, 'modal2')">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(event, 'modal2')">&times;</button>
+    <h2>SIM CARD MULTI-RED 4G LTE</h2>
+    <p>
+      Conéctate siempre a la mejor red disponible. Nuestra SIM Multi-Red selecciona automáticamente el operador con mejor señal, asegurando cobertura nacional y máxima confiabilidad para tus dispositivos GPS, routers o IoT.<br><br>
+      <strong>Ventajas:</strong>
+    </p>
+    <ul>
+      <li>Acceso a varias redes móviles (mayor cobertura y menos caídas)</li>
+      <li>Cambio automático de red ante baja señal</li>
+      <li>Soporte para 4G LTE y tecnologías IoT</li>
+      <li>Ideal para rastreadores, routers y sistemas de seguridad</li>
+      <li>Instalación profesional y soporte local</li>
+    </ul>
+    <p>
+      <strong>¿Para quién es?</strong><br>
+      Vehículos, flotillas, alarmas, dispositivos IoT y hogares en zonas rurales.
+    </p>
+  </div>
+</div>
+
+<!-- SECCIÓN VIDEO -->
+<section id="video" class="video-logo-section">
+  <div class="video-container">
+    <video controls poster="{% static 'main/posterr.png' %}" class="video-destacado" muted playsinline>
+      <source src="{% static 'main/video-gps.mp4' %}" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+  </div>
+</section>
+
+
+<!-- SECCIÓN TESTIMONIOS -->
+<section id="testimonios" class="testimonios" aria-label="Testimonios de clientes">
+  <div class="container">
+    <h2>Lo que dicen nuestros clientes</h2>
+
+    <article class="testimonio" role="article" aria-labelledby="testimonio1-aut">
+      <div class="testimonio-header">
+        <!-- Icono de comillas grande visible -->
+        <svg class="icon-comillas" aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 24 24" fill="#00d8ff" >
+          <path d="M7.17 6A4.17 4.17 0 0 0 3 10.17v4.66A4.17 4.17 0 0 0 7.17 19h.83v-2H7.17a2.17 2.17 0 0 1-2.17-2.17v-4.66A2.17 2.17 0 0 1 7.17 8h.83V6H7.17zm9 0A4.17 4.17 0 0 0 12 10.17v4.66A4.17 4.17 0 0 0 16.17 19h.83v-2h-.83a2.17 2.17 0 0 1-2.17-2.17v-4.66A2.17 2.17 0 0 1 16.17 8h.83V6h-1.83z"/>
+        </svg>
+
+        <!-- Avatar y nombre alineados -->
+        <footer id="testimonio1-aut" class="autor-testimonio">
+          <img src="{% static 'main/testimonio.png' %}" alt="Foto de Juan Pérez" class="avatar" loading="lazy" width="48" height="48" />
+          <span>Juan Pérez, Técnico Instalador</span>
+        </footer>
+      </div>
+
+      <p>"El GPS VL103 me ha dado tranquilidad y confianza. La instalación fue rápida y el soporte excelente."</p>
+    </article>
+
+    <article class="testimonio" role="article" aria-labelledby="testimonio2-aut">
+      <div class="testimonio-header">
+        <svg class="icon-comillas" aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 24 24" fill="#00d8ff" >
+          <path d="M7.17 6A4.17 4.17 0 0 0 3 10.17v4.66A4.17 4.17 0 0 0 7.17 19h.83v-2H7.17a2.17 2.17 0 0 1-2.17-2.17v-4.66A2.17 2.17 0 0 1 7.17 8h.83V6H7.17zm9 0A4.17 4.17 0 0 0 12 10.17v4.66A4.17 4.17 0 0 0 16.17 19h.83v-2h-.83a2.17 2.17 0 0 1-2.17-2.17v-4.66A2.17 2.17 0 0 1 16.17 8h.83V6h-1.83z"/>
+        </svg>
+
+        <footer id="testimonio2-aut" class="autor-testimonio">
+          <img src="{% static 'main/testi.png' %}" alt="Foto de María Gómez" class="avatar" loading="lazy" width="48" height="48" />
+          <span>María Gómez, Cliente satisfecha</span>
+        </footer>
+      </div>
+
+      <p>"La tecnología anti-jammer realmente funciona. Mi vehículo está protegido las 24 horas."</p>
+    </article>
+  </div>
+</section>
+
+
+
+<!-- SECCIÓN FAQ -->
+<section id="faq" class="faq">
+  <div class="container">
+    <h2>Preguntas frecuentes</h2>
+    <dl>
+      <dt>¿Qué cobertura tiene el GPS VL103?</dt>
+      <dd>Cobertura nacional gracias a la SIM Multi-Red 4G LTE.</dd>
+      <dt>¿Se puede instalar en cualquier vehículo?</dt>
+      <dd>Sí, es compatible con la mayoría de vehículos y fácil de instalar.</dd>
+      <dt>¿Qué incluye la instalación profesional?</dt>
+      <dd>Montaje, configuración y capacitación básica para el uso de la plataforma.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- SECCIÓN CONTACTO -->
+<section id="contacto" class="contacto">
+  <div class="container">
+    <h2>Contáctanos</h2>
+    <form action="#" method="POST" class="form-contacto" novalidate>
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+      <button type="submit" class="btn-primary">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-contacto">
+      <h3>Contacto</h3>
+      <p>Tel: +57 3185914450</p>
+      <p>Email: contacto@standelectronico.com</p>
+    </div>
+    <nav class="footer-nav" aria-label="Enlaces importantes">
+      <ul>
+        <li><a href="/politica-privacidad">Política de Privacidad</a></li>
+        <li><a href="/terminos">Términos y Condiciones</a></li>
+        <li><a href="/soporte">Soporte Técnico</a></li>
+      </ul>
+    </nav>
+    <div class="footer-cta">
+      <a href="/newsletter" class="btn-cta">Suscríbete a nuestro Newsletter</a>
+    </div>
+    <div class="footer-redes">
+      <a href="https://facebook.com/tuempresa" aria-label="Facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://twitter.com/tuempresa" aria-label="Twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+      <a href="https://instagram.com/tuempresa" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Stand Electrónico. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/521XXXXXXXXXX" target="_blank" title="Chatea por WhatsApp" aria-label="Chatea por WhatsApp" class="whatsapp-float">
+    <img src="{% static 'main/whatsapp.png' %}" alt="WhatsApp" />
+  </a>
+
+
+<script src="{% static 'main/main.js' %}"></script>
+</body>
+</html>
